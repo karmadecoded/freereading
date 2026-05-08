@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Personal Success Code | Numerology Reading</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #1a0a2e;
+  --purple: #350c48;
+  --mid: #5c1a7a;
+  --gold: #c9a84c;
+  --gold-light: #e8d08a;
+  --cream: #f5edd9;
+  --lavender: #caafe0;
+  --text: #f0e8d8;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Cormorant Garamond',serif;
+  background:var(--deep);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before {
+  content:'';
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%,rgba(201,168,76,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 80% 10%,rgba(255,255,255,.4) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%,rgba(201,168,76,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 40% 80%,rgba(255,255,255,.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 10% 60%,rgba(202,175,224,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 90% 50%,rgba(255,255,255,.3) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 20%,rgba(202,175,224,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 70% 40%,rgba(201,168,76,.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 50% 15%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 85% 85%,rgba(202,175,224,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 15% 90%,rgba(255,255,255,.3) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 55%,rgba(201,168,76,.5) 0%,transparent 100%);
+  pointer-events:none; z-index:0;
+}
+body::after {
+  content:'';
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 20%,rgba(53,12,72,.7) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 80%,rgba(92,26,122,.4) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 60% at 60% 10%,rgba(201,168,76,.08) 0%,transparent 70%);
+  pointer-events:none; z-index:0;
+}
+.wrap {
+  position:relative; z-index:1;
+  max-width:700px; margin:0 auto;
+  padding:0 20px 80px;
+}
+
+/* HERO */
+.hero { text-align:center; padding:60px 20px 40px; }
+.badge {
+  display:inline-block;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--gold); border:1px solid rgba(201,168,76,.4);
+  padding:8px 20px; border-radius:30px; margin-bottom:28px;
+  animation:fadeUp .8s ease both;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,6vw,50px); line-height:1.2;
+  color:var(--cream); margin-bottom:20px;
+  animation:fadeUp .9s .2s ease both;
+}
+.hero h1 span { color:var(--gold); font-style:italic; }
+.hero p {
+  font-size:clamp(16px,2.5vw,19px); font-weight:300;
+  color:rgba(240,232,216,.8); line-height:1.75;
+  max-width:540px; margin:0 auto 32px;
+  animation:fadeUp 1s .4s ease both;
+}
+.divider {
+  display:flex; align-items:center; gap:14px;
+  margin:20px auto; max-width:280px;
+}
+.divider::before,.divider::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+/* CALCULATOR */
+.calc-card {
+  background:rgba(53,12,72,.6);
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:22px; padding:42px 38px;
+  text-align:center; backdrop-filter:blur(10px);
+  animation:fadeUp 1s .5s ease both;
+  box-shadow:0 20px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(201,168,76,.15);
+  transition:opacity .4s;
+}
+.calc-card h2 {
+  font-family:'Playfair Display',serif;
+  font-size:25px; color:var(--cream); margin-bottom:10px;
+}
+.calc-card > p { font-size:17px; color:rgba(240,232,216,.7); margin-bottom:34px; }
+.date-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.df { display:flex; flex-direction:column; align-items:center; gap:7px; }
+.df label {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold);
+}
+.df select {
+  background:rgba(26,10,46,.8);
+  border:1px solid rgba(201,168,76,.35); border-radius:12px;
+  color:var(--cream); font-family:'Cormorant Garamond',serif;
+  font-size:19px; text-align:center; padding:13px 8px; width:88px;
+  outline:none; transition:border-color .3s,box-shadow .3s;
+  appearance:none; -webkit-appearance:none; cursor:pointer;
+}
+.df select:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,.15); }
+.df select option { background:#1a0a2e; color:var(--cream); }
+.df.yr select { width:108px; }
+.err { color:#e07070; font-size:15px; margin-top:-8px; margin-bottom:8px; display:none; }
+.gold-btn {
+  display:inline-flex; align-items:center; gap:9px;
+  background:linear-gradient(135deg,var(--gold) 0%,#a07828 100%);
+  color:#1a0a2e; font-family:'Josefin Sans',sans-serif;
+  font-size:13px; font-weight:400; letter-spacing:3px; text-transform:uppercase;
+  border:none; border-radius:50px; padding:17px 42px;
+  cursor:pointer; transition:all .3s;
+  box-shadow:0 8px 30px rgba(201,168,76,.3); margin-top:4px;
+}
+.gold-btn:hover { transform:translateY(-2px); box-shadow:0 14px 40px rgba(201,168,76,.45); }
+
+/* LOADING */
+.loader { display:none; text-align:center; padding:50px; }
+.spinner {
+  width:50px; height:50px;
+  border:2px solid rgba(201,168,76,.2); border-top-color:var(--gold);
+  border-radius:50%; animation:spin .8s linear infinite;
+  margin:0 auto 16px;
+}
+.loader-txt { font-family:'Josefin Sans',sans-serif; font-size:11px; letter-spacing:3px; color:var(--gold); }
+
+/* CONTENT BLOCKS — hidden by default */
+.block {
+  display:none; margin-top:50px;
+  animation:fadeUp .7s ease forwards;
+}
+
+/* Intro block */
+.intro-card {
+  background:rgba(53,12,72,.6);
+  border:1px solid rgba(201,168,76,.2);
+  border-radius:20px; padding:36px 34px;
+  text-align:center; backdrop-filter:blur(10px);
+}
+.intro-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,4vw,28px); color:var(--cream); margin-bottom:20px;
+}
+.intro-card p {
+  font-size:18px; line-height:1.9;
+  color:rgba(240,232,216,.88); white-space:pre-wrap; text-align:left;
+}
+
+/* Key section */
+.key-lbl {
+  display:inline-block; margin-bottom:16px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:10px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--gold); background:rgba(201,168,76,.1);
+  border:1px solid rgba(201,168,76,.25); padding:5px 15px; border-radius:20px;
+}
+.key-intro-box {
+  background:rgba(53,12,72,.55);
+  border:1px solid rgba(202,175,224,.15);
+  border-radius:17px; padding:26px 28px; margin-bottom:22px;
+}
+.key-intro-box h4 {
+  font-family:'Playfair Display',serif;
+  font-size:21px; color:var(--cream); margin-bottom:12px; line-height:1.35;
+}
+.key-intro-box p { font-size:17px; line-height:1.85; color:rgba(240,232,216,.85); }
+.num-circle {
+  width:70px; height:70px; border-radius:50%;
+  background:linear-gradient(135deg,var(--mid) 0%,var(--purple) 100%);
+  border:2px solid var(--gold);
+  font-family:'Playfair Display',serif; font-size:29px;
+  color:var(--gold-light); display:flex; align-items:center; justify-content:center;
+  margin:0 auto 20px;
+  box-shadow:0 4px 24px rgba(201,168,76,.35);
+}
+.key-img {
+  width:100%; max-width:440px; border-radius:15px;
+  margin:0 auto 22px; display:block;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+.key-desc {
+  background:rgba(53,12,72,.5);
+  border:1px solid rgba(202,175,224,.2);
+  border-radius:17px; padding:26px 28px;
+  font-size:18px; line-height:1.9;
+  color:rgba(240,232,216,.92); white-space:pre-wrap; text-align:left;
+}
+
+/* Progress tracker */
+.tracker {
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; flex-wrap:wrap; margin:28px 0 22px;
+}
+.tc {
+  width:44px; height:44px; border-radius:50%;
+  font-family:'Playfair Display',serif; font-size:17px;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .5s ease;
+}
+.tc.on {
+  background:linear-gradient(135deg,var(--mid),var(--purple));
+  border:2px solid var(--gold); color:var(--gold-light);
+  box-shadow:0 0 14px rgba(201,168,76,.4);
+}
+.tc.off {
+  border:2px solid rgba(201,168,76,.25);
+  color:rgba(201,168,76,.35);
+}
+.tc.off::after { content:'?'; }
+.tsep { font-size:16px; color:rgba(201,168,76,.3); }
+
+/* Reveal button */
+.rev-btn {
+  display:block; width:100%; max-width:420px; margin:26px auto 0;
+  background:linear-gradient(135deg,var(--purple) 0%,var(--mid) 100%);
+  color:var(--cream); font-family:'Josefin Sans',sans-serif;
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  border:1px solid rgba(201,168,76,.4); border-radius:50px;
+  padding:17px 28px; cursor:pointer; transition:all .3s;
+  box-shadow:0 8px 28px rgba(0,0,0,.3); text-align:center;
+}
+.rev-btn:hover { transform:translateY(-2px); border-color:var(--gold); box-shadow:0 14px 36px rgba(201,168,76,.25); }
+
+/* Email gate */
+.gate-card {
+  text-align:center; padding:48px 38px;
+  background:linear-gradient(135deg,rgba(53,12,72,.9) 0%,rgba(26,10,46,.9) 100%);
+  border:1px solid rgba(201,168,76,.35); border-radius:22px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.gate-card .icon { font-size:38px; margin-bottom:18px; }
+.gate-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,4vw,27px); color:var(--cream); margin-bottom:12px;
+}
+.gate-card > p { font-size:17px; color:rgba(240,232,216,.75); margin-bottom:28px; line-height:1.7; }
+.gate-form { display:flex; flex-direction:column; gap:13px; max-width:390px; margin:0 auto; }
+.gate-form input {
+  background:rgba(26,10,46,.8);
+  border:1px solid rgba(201,168,76,.35); border-radius:12px;
+  padding:15px 18px; color:var(--cream);
+  font-family:'Cormorant Garamond',serif; font-size:18px;
+  outline:none; transition:border-color .3s; text-align:center;
+}
+.gate-form input::placeholder { color:rgba(240,232,216,.4); }
+.gate-form input:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,.15); }
+
+/* Code reveal */
+.code-card {
+  text-align:center; padding:48px 28px;
+  background:linear-gradient(135deg,rgba(53,12,72,.8) 0%,rgba(92,26,122,.3) 100%);
+  border:1px solid rgba(201,168,76,.3); border-radius:22px;
+}
+.code-card h3 { font-family:'Playfair Display',serif; font-size:27px; color:var(--cream); margin-bottom:10px; }
+.code-card > p { font-size:16px; color:rgba(240,232,216,.7); margin-bottom:28px; }
+.code-nums { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:18px; }
+.cn {
+  width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(135deg,var(--mid),var(--purple));
+  border:2px solid var(--gold);
+  font-family:'Playfair Display',serif; font-size:23px; color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(201,168,76,.3);
+  animation:glow 3s ease infinite;
+}
+.cn:nth-child(2){animation-delay:.4s}
+.cn:nth-child(3){animation-delay:.8s}
+.cn:nth-child(4){animation-delay:1.2s}
+.cn:nth-child(5){animation-delay:1.6s}
+
+/* CTA */
+.cta-btn {
+  display:block; width:100%; max-width:440px; margin:38px auto 0;
+  text-align:center;
+  background:linear-gradient(135deg,var(--gold) 0%,#c4932a 50%,var(--gold) 100%);
+  background-size:200% 100%;
+  color:#1a0a2e; font-family:'Josefin Sans',sans-serif;
+  font-size:14px; letter-spacing:3px; text-transform:uppercase;
+  text-decoration:none; border:none; border-radius:50px;
+  padding:21px 38px; cursor:pointer; transition:all .4s;
+  box-shadow:0 10px 40px rgba(201,168,76,.4);
+  animation:shimmer 3s ease infinite;
+}
+.cta-btn:hover { transform:translateY(-3px); box-shadow:0 20px 60px rgba(201,168,76,.6); }
+.cta-note { text-align:center; font-size:15px; color:rgba(240,232,216,.5); margin-top:14px; font-style:italic; }
+
+/* ANIMATIONS */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes spin     { to{transform:rotate(360deg)} }
+@keyframes glow     { 0%,100%{box-shadow:0 4px 20px rgba(201,168,76,.3)} 50%{box-shadow:0 4px 30px rgba(201,168,76,.6)} }
+@keyframes shimmer  { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+/* MOBILE */
+@media(max-width:520px){
+  .calc-card{padding:28px 16px}
+  .df select{width:74px;font-size:17px}
+  .df.yr select{width:98px}
+  .key-desc,.key-intro-box{padding:20px 16px;font-size:16px}
+  .gate-card{padding:34px 18px}
+  .intro-card{padding:26px 18px}
+  .intro-card p{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">✦ Free Numerology Reading ✦</div>
+  <h1>What If Your Birth Date Is<br><span>Trying to Tell You Something?</span></h1>
+  <p>Unlock the hidden messages woven into your personal numbers — discover your true purpose, your gifts, and the path your soul has been waiting for you to walk.</p>
+  <div class="divider"><span style="color:var(--gold)">✦</span></div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-card" id="calc-card">
+  <h2>Reveal Your Personal Success Code</h2>
+  <p>Enter your date of birth to receive your free personalised reading</p>
+  <div class="date-row">
+    <div class="df">
+      <label>Day</label>
+      <select id="inp-day"><option value="" disabled selected>DD</option></select>
+    </div>
+    <div class="df">
+      <label>Month</label>
+      <select id="inp-month">
+        <option value="" disabled selected>MM</option>
+        <option value="1">January</option><option value="2">February</option>
+        <option value="3">March</option><option value="4">April</option>
+        <option value="5">May</option><option value="6">June</option>
+        <option value="7">July</option><option value="8">August</option>
+        <option value="9">September</option><option value="10">October</option>
+        <option value="11">November</option><option value="12">December</option>
+      </select>
+    </div>
+    <div class="df yr">
+      <label>Year</label>
+      <select id="inp-year"><option value="" disabled selected>YYYY</option></select>
+    </div>
+  </div>
+  <p class="err" id="date-err">Please select your full date of birth</p>
+  <button class="gold-btn" onclick="startReading()">✦ Reveal My Code</button>
+</div>
+
+<!-- LOADING -->
+<div class="loader" id="loader">
+  <div class="spinner"></div>
+  <div class="loader-txt">Reading your numbers...</div>
+</div>
+
+<!-- INTRO (step 0) -->
+<div class="block" id="b-intro">
+  <div class="intro-card">
+    <h3>You're in the game! Welcome ⭐️</h3>
+    <p id="intro-body"></p>
+    <button class="rev-btn" style="margin-top:26px" onclick="showKey1()">🗝️ Reveal Key 1 — My Personality Number</button>
+  </div>
+</div>
+
+<!-- KEY 1: PERSONALITY (day) -->
+<div class="block" id="b-k1">
+  <div class="key-lbl">🗝️ Key 1 of 5</div>
+  <div class="key-intro-box">
+    <h4>The first key to your personal success code is the meaning of your Personality Number ️</h4>
+    <p>Your Personality Number is a powerful key to understanding your core talents and life's greater mission. It reveals the qualities that will support your growth and guide you toward your true potential and goals.</p>
+  </div>
+  
+  <img class="key-img" id="k1-img" src="" alt="">
+  <div class="key-desc" id="k1-txt"></div>
+  <div class="tracker" id="tr1"></div>
+  <button class="rev-btn" onclick="showKey2()">🗝️ Reveal Key 2 — My Ancestral Wisdom</button>
+</div>
+
+<!-- KEY 2: ANCESTRAL (month) -->
+<div class="block" id="b-k2">
+  <div class="key-lbl">🗝️ Key 2 of 5</div>
+  <div class="key-intro-box">
+    <h4>Now let's go deeper and uncover the ancestral wisdom hidden within your date of birth ✨</h4>
+    <p>Your lineage is the foundation of your identity — shaping your beliefs, your inner compass, and the path you walk in this life. It holds the values, strengths, and hidden gifts that quietly support you from within.</p>
+  </div>
+  
+  <img class="key-img" id="k2-img" src="" alt="">
+  <div class="key-desc" id="k2-txt"></div>
+  <div class="tracker" id="tr2"></div>
+  <button class="rev-btn" onclick="showGate()">🗝️ Reveal Key 3 — My Career &amp; Money Code</button>
+</div>
+
+<!-- EMAIL GATE -->
+<div class="block" id="b-gate">
+  <div class="gate-card">
+    <div class="icon">🔮</div>
+    <h3>Your Reading Is Unlocking...</h3>
+    <p>You've discovered 2 of your 5 keys. Enter your details below to reveal your Career & Money Code, Relationship Blueprint, and Health Vitality number — completely free.</p>
+    <div class="gate-form">
+      <input type="text" id="g-name" placeholder="Your first name">
+      <input type="email" id="g-email" placeholder="Your best email address">
+      <p class="err" id="email-err">Please enter a valid name and email</p>
+      <button class="gold-btn" style="width:100%;justify-content:center" onclick="submitEmail()">✦ Unlock My Full Reading ✦</button>
+    </div>
+  </div>
+</div>
+
+<!-- KEY 3: CAREER/MONEY (year) -->
+<div class="block" id="b-k3">
+  <div class="key-lbl">🗝️ Key 3 of 5</div>
+  <div class="key-intro-box">
+    <h4>Now, let's uncover the area where your talents can shine the brightest ⭐️</h4>
+    <p>This is the third key in your personal Success Code — where you can fully realise your life's purpose. Based on your birth date, I've prepared a personalised interpretation just for you.</p>
+  </div>
+ 
+  <img class="key-img" id="k3-img" src="" alt="">
+  <div class="key-desc" id="k3-txt"></div>
+  <div class="tracker" id="tr3"></div>
+  <button class="rev-btn" onclick="showKey4()">🗝️ Reveal Key 4 — My Relationship Blueprint</button>
+</div>
+
+<!-- KEY 4: RELATIONSHIPS (destiny) -->
+<div class="block" id="b-k4">
+  <div class="key-lbl">🗝️ Key 4 of 5</div>
+  <div class="key-intro-box">
+    <h4>The fourth key to your success code is Relationships 💔</h4>
+    <p>They impact your energy, inspiration, and support along your life path. Understanding how you interact with your loved ones and those around you helps you uncover your strengths and achieve greater harmony 💫</p>
+  </div>
+  
+  <img class="key-img" id="k4-img" src="" alt="">
+  <div class="key-desc" id="k4-txt"></div>
+  <div class="tracker" id="tr4"></div>
+  <button class="rev-btn" onclick="showKey5()">🗝️ Reveal Key 5 — My Health &amp; Vitality</button>
+</div>
+
+<!-- KEY 5: HEALTH -->
+<div class="block" id="b-k5">
+  <div class="key-lbl">🗝️ Key 5 of 5</div>
+  <div class="key-intro-box">
+    <h4>The final key to your success code is Health and Vitality 💪</h4>
+    <p>They serve as the foundation for realising your talents and achieving your goals. Understanding your energy resources and personal characteristics will help you maintain balance and live in harmony with yourself.</p>
+  </div>
+  
+  <img class="key-img" id="k5-img" src="" alt="">
+  <div class="key-desc" id="k5-txt"></div>
+  <div class="tracker" id="tr5"></div>
+  <button class="rev-btn" onclick="showCode()">✦ Activate My Success Code</button>
+</div>
+
+<!-- CODE REVEAL + ACTIVATION + CTA -->
+<div class="block" id="b-code">
+  <div class="code-card">
+    <h3>✦ Your Personal Code of Success ✦</h3>
+    <p>All 5 keys collected — this is your unique energetic signature.</p>
+    <div class="code-nums" id="code-nums"></div>
+    <p style="font-size:16px;color:rgba(240,232,216,.7);line-height:1.7">These unique numbers carry the energy of your success. Keep them close, play with their combinations, and let them guide you toward your brightest path. 🌟</p>
+
+    <div style="margin-top:40px;text-align:left">
+      <div class="key-lbl" style="display:block;text-align:center;margin-bottom:18px">✦ Activation — Your Gifts &amp; Soul Mission</div>
+      <img class="key-img" id="act-img" src="" alt="">
+      <div class="key-desc" id="act-txt" style="margin-top:18px"></div>
+    </div>
+  </div>
+
+  <a href="https://payhip.com/b/QGKNz" target="_blank" class="cta-btn">✦ Get My Full Reading Here ✦</a>
+  <p class="cta-note">💜 This was just your preview. Your full Destiny Matrix goes deeper into every sphere with  personalised guidance across all areas of your life</p>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script>
+try {
+  firebase.initializeApp({
+    apiKey:"AIzaSyAPCFjjC6SqtQEauTQ6Hs7Ex-B2tj6PuXM",
+    authDomain:"soul-code-app.firebaseapp.com",
+    projectId:"soul-code-app",
+    storageBucket:"soul-code-app.firebasestorage.app",
+    messagingSenderId:"339179205157",
+    appId:"1:339179205157:web:e801c0ad054cbc6a1c05cc"
+  });
+} catch(e){ console.log('Firebase init skipped'); }
+
+// ── DATA ──────────────────────────────────────────────────────
+const personalityDescriptions = {
+  1:`You're a born trailblazer, someone who came into this world to create what has never been done before. Whether it's inventing something groundbreaking or sparking a whole new idea, your presence has the power to shift the world around you 🔥
+
+Leadership comes naturally to you as long as you're not suppressing it. You're meant to guide, decide, and inspire others, to build, innovate, and leave your mark in a way that feels uniquely yours.
+
+❌ Your main challenge? Sometimes you hesitate to step into the spotlight, to truly own your power, your vision, and your ability to lead. But deep down, you already have everything it takes.
+
+You were born to lead with confidence and to succeed as an entrepreneur or visionary who inspires others through your courage and originality.
+
+Now it's time to unlock your Money Triangle and tap into the full strength of your inner power 💸`,
+
+  2:`This means you have a natural gift for bringing people together and offering meaningful support and guidance, especially to women and children. You're deeply intuitive, persuasive, and naturally skilled at building strong emotional connections. You also carry the ability to transform others through the power of your voice, the strength of your lineage, and the wisdom you can access from the universal library of knowledge 💫
+
+❌ Your challenge? A deep inner sense of feeling unloved. You tend to undervalue yourself, constantly focusing on your flaws.
+
+But here's the truth, people like you hold extraordinary intuitive and energetic gifts. You feel others on a soul level, and you are incredibly well suited for fields like numerology, energy work, and emotional healing.
+
+All that's needed now is to step into your purpose and begin expanding your natural abilities 🙌🏻`,
+
+  3:`You have a natural gift for inspiring others, your energy can spark transformation, bold action, and even global impact.
+
+You're highly creative and charismatic, with the potential to become a role model for millions. You were born to be seen, to stand on stage, to shine in the spotlight, and to share your voice with the world 🎤
+
+Many 3s become successful bloggers, influencers, performers, or public figures. There is also a special connection between this number and children, the more you work with or support children, the more abundance tends to flow your way.
+
+❌ Your challenge? A fear of being visible.
+
+Stepping into the public eye, showing the real you on social media, or speaking up can feel overwhelming, like riding a Hippogriff for the first time.
+
+This fear can leave you swinging between extremes. You might go all in on motherhood, becoming the ultimate supermom, focused solely on your home and family, never giving yourself space to grow. Or you might escape into work, pouring all your energy into business while unintentionally neglecting your personal life.
+
+But your true power lies in the balance. You are here to work with women, express yourself authentically, and lead through connection. Your superpower is already within you, now it is just a matter of discovering where and how to fully share it 🙌🏻`,
+
+  4:`You are someone born to build, to lay strong foundations, create new paths, and turn bold ideas into real world solutions. You are here to lead, build businesses, and help others rise and transform through your work 💫
+
+❌ Your biggest challenge? Overworking and taking on too much. You tend to carry the weight of the world on your shoulders. Even when you are not at a job, you are likely handling everything at home.
+
+You are always trying to help, to fix, to support, and often your efforts go unrecognized or taken for granted. The people around you can sometimes act more like takers than true partners.
+
+But here is the truth, your superpower lies in channeling that strong 4 energy into building something of your own, not working endlessly for others.
+
+It is time to stop pouring your energy into everyone else and start unlocking your own potential 🙌🏻`,
+
+  5:`This means you are here to be a teacher and a guide for others. Your mission is to share the knowledge you receive, to absorb information from many sources, connect the dots, and transform it into your own unique teachings that shift people's thinking and open minds.
+
+❌ Your challenge? Scattered focus. You are endlessly curious, always learning something new, jumping between interests, and chasing fresh ideas. But this constant search makes it hard to commit to one path long enough to turn it into something truly profitable 💸 You see the world like a magical candy shop, it all looks amazing, and choosing just one flavor feels impossible.
+
+Truly speaking, you are not just a student, you are a spiritual mentor. The moment you own that role and focus your energy, everything begins to shift 🙌🏻`,
+
+  6:`This means you were born to teach others how to love themselves and to see the beauty that surrounds them. You have the ability to create beauty, open people's hearts, and bring a sense of love, purity, and harmony into the world 😍
+
+Those with the energy of 6 often become natural performers, actors, hosts, artists, and influencers, because their energy naturally draws others in.
+
+When you follow your true path, your growth and success can unfold rapidly.
+
+❌ Your challenge? Criticism of your own appearance and beauty. You have a deeply sensitive soul, you feel everything very intensely, and that makes you vulnerable to self doubt. That sensitivity, though beautiful, can become your greatest block if you let it hold you back.
+
+But here is the truth, when you finally accept yourself, love who you are, and stop losing yourself in others, you will rise, powerfully and beautifully 🙌🏻`,
+
+  7:`You are someone capable of evolutionary breakthroughs. You are here to uncover hidden meanings, reveal truth, and make discoveries that others cannot even begin to see.
+
+You are a cosmic soul, someone who does not belong to one place, one idea, or one limit. For you, home is the Universe, and the word impossible does not exist 💫
+
+❌ Your greatest challenge is the fear of expansion. You may hold back from making bold moves, afraid to leap, relocate, or dive into the unknown. Sometimes laziness or hesitation creeps in, even though inside you is an entire world of wonders 😍
+
+The shadow side of a 7 is procrastination, slowness, or giving up before reaching the goal, and for you, that is not an option.
+
+Because your superpower lies in your ability to make quantum leaps and rapid transformations. You just need to know how to direct your energy, and when you do, nothing can stop you 🙌🏻`,
+
+  8:`This means you have the rare ability to expand the world's financial energy by understanding cause and effect and seeing how karmic balance plays out in real life. You are here to bring harmony between the material and the spiritual, helping others see that abundance and purpose can go hand in hand 💫
+
+You hold the most financially powerful number in numerology, with massive potential for entrepreneurship and leadership.
+
+❌ Your challenge? A heightened sense of justice. You are constantly trying to make sure everything is fair, correct, and aligned, but in doing so you often forget to live for yourself.
+
+This inner battle can leave you feeling restricted, like you are carrying the weight of doing things the right way for everyone else.
+
+The good news is that you do not need to do it all, you just need to know where to direct your energy, and everything will start flowing 🙌🏻`,
+
+  9:`You are a natural born healer, you did not come into this world by chance. You are here to heal others on every level, soul, body, and mind. Your energy is powerful, and your presence alone can bring calm, clarity, and transformation 💫
+
+❌ Your greatest challenge? The impostor syndrome. You often undervalue your own knowledge and gifts, feeling like you are not ready or qualified enough to begin.
+
+You may also struggle with the rescuer mindset, always helping others first, working for free, avoiding raising your prices, and constantly pouring energy into helping your mom, grandmother, partner, or anyone else in need. In the end, you find yourself drained, with nothing left for you, even though your soul is crying out for space, healing, and purpose.
+
+But here is the truth, 9 is the most spiritual and profound number of all. The moment you turn inward, into self discovery, personal growth, and tools like numerology, you begin to uncover your true calling. That is when everything begins to shift 🙌🏻`
+};
+
+const personalityImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164545.png?alt=media&token=ba023f0e-681f-4469-ac22-eb9c901cf215",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_58cd1ebb84c0183d45e4275f481db954.png?alt=media&token=767b37ff-6419-4df3-a696-3fa27aebbd71",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_6f8894ec3531aa7ceeecfc96aefa99a1.png?alt=media&token=38600131-2438-4c26-9eb9-dd44e3a6204e",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_52e9d6d7d7cd08b8df71395851af3342.png?alt=media&token=d28585d2-a005-462b-a6a0-96d6efedb093",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_6bf7a9cd5cf927322435a613e3bc305b.png?alt=media&token=b4f5c917-93c4-49bb-b72b-fd9672743f65",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_ec6f3f50a7d19d8ea8ffb413fc1a60d4.png?alt=media&token=910d1c54-c4bb-4356-baa3-f3e84058fc4c",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164644.png?alt=media&token=977e87fd-6bde-4c07-8d7b-af98fa1b222a",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164654.png?alt=media&token=ad8f45ec-9fb8-4ed5-9365-aaf2a2610880",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164703.png?alt=media&token=524244b0-e4cc-4f41-9539-3f6a36b731b0"
+};
+
+const monthWisdom = {
+  1:`1 ✰ January : One of your soul's most beautiful lessons in this lifetime is learning to share and give freely 💖 In a past life, you may have held on tightly to resources, energy, or emotions, and now you are being invited to open your heart.
+
+I know you might be thinking, "That doesn't sound like me." But here's the gentle truth — many of our early life experiences are designed to challenge old patterns and help us grow in the opposite direction 🙌🏻
+
+In this life, your mission is to learn to give, especially to your siblings 👩‍❤️‍👨 Whether they are biological or step siblings, your role is to support them, help them rise, offer guidance, and inspire their growth.
+
+You are being asked to take loving responsibility for their well being, to be a steady source of strength and direction. Without this inner alignment, making a true quantum leap forward in life can feel harder.
+
+But don't worry — you are not alone on this path. I am here to guide you through it with warmth and support 💕`,
+  2:`2 ✰ February: You have a deep energetic bond with the women in your family line, your mother, grandmother, and great grandmother.
+
+Because of this strong connection, one of your soul's key lessons is to support their well being, to bring them joy, care for their health, and spread kindness through your actions 🙌🏻
+
+If your grandmothers are no longer with you, this energy can still be honored by helping elders in your community, volunteering in nursing homes, or simply offering compassion to those in need.
+
+This is part of your sacred path, and every act of kindness you give will return to you multiplied 💫`,
+  3:`3 ✰ March: Your ancestral program is all about separating energetically from your mother, learning not to repeat her patterns and not to depend on her opinions to shape your life.
+
+Whether you realize it or not, your mother's influence still has a strong hold over your decisions. This can quietly steer your life in directions that do not align with your true self, sometimes holding you back from your potential.
+
+Of course, it is important to love her and bring her joy, but that does not mean you need to live your life according to her expectations.
+
+It is time to break free from that energetic attachment and make your own choices from your soul, not from inherited fears or guilt.
+
+Let's take this quantum leap together and step fully into your power 🚀`,
+  4:`4 ✰ April: Your strongest ancestral energy is connected to your father. In a past life, or even earlier in this one, he may have experienced a great loss, or your paths may have drifted apart emotionally or physically.
+
+In this lifetime, you are being called to become the father figure, the stable foundation, the provider, and the leader within your own family.
+
+It is essential for you to build your own business, achieve financial independence, and be a strong support for your ancestral line 👪
+
+Just as important is learning to love and forgive your father for any past mistakes. That forgiveness is the key to healing your lineage and stepping fully into your power.
+
+This is how you will complete your ancestral cycle and rise as the leader you are meant to be.
+
+And I'm here to support you on that journey 🙌🏻`,
+  5:`5 ✰ May: Your path to abundance lies in bold change and breaking free from old patterns 💥
+
+Those born in May begin earning real wealth when they stop following the traditional rules of their family and start creating their own. If your parents were not entrepreneurs, that is your invitation to try 💼 Do not be afraid to be the first in your lineage to unlock your full potential.
+
+May born 5s are natural teachers and motivators, creative, fast moving, and incredibly versatile 💡
+
+Your challenge is chaos. You tend to jump from one thing to the next, making it hard to build lasting stability. One thing is clear, routine and boring jobs are not for you 🚫
+
+Your success will come through freedom, creativity, and doing things your own way.`,
+  6:`6 ✰ June: Your most important soul lesson in this life is to build happy and harmonious relationships.
+
+Your parents may not have had the kind of loving, connected bond that sets a healthy example. Their relationship may have lacked emotional closeness or true affection, and because of that, the natural flow of love in your family line was disrupted.
+
+Now it is your turn to heal that pattern. You are here to create the kind of deep, nurturing partnership that your lineage could not fully express.
+
+But there is a challenge. The energy of the 6 can sometimes interfere with your ability to love and be loved. You may struggle to truly feel love for yourself, fall into emotional dependence, or lose your sense of self in relationships, which can eventually lead to separation and heartbreak 😔
+
+But don't worry — this is a lesson you can overcome.
+And I'm here to guide you through it, every step of the way 🙌🏻`,
+  7:`7 ✰ July: One of your most important life missions is to elevate your family lineage, either by reaching a new level of financial stability or by planting new roots in a bigger city or even better, another country 🌇
+
+This is because the energy of your ancestral line has become stagnant. It needs movement, renewal, and expansion, making it a must to step into a place that allows growth and opportunity.
+
+And you're not alone in this — I'm here to guide you 😊`,
+  8:`8 ✰ August: Those born in August come into this world with a soul mission to bring peace and harmony between their parents.
+
+At some point, the natural balance of giving and receiving in their relationship was broken. Something in that dynamic was not quite right 🤔
+
+Your task in this life is to be a peacemaker, someone who heals rifts, restores balance, and helps others come back into alignment.
+
+But to fully step into that role, you need to let go of the belief that the world is unfair or that people are bound to betray or deceive you.
+
+When you release those fears, your energy will rise quickly and you will step into a life of true happiness, growth, and emotional freedom.
+
+And I'm here to help you do just that 🙌🏻`,
+  9:`9 ✰ September: Congratulations. You carry the gathered talents of your entire ancestral line.
+
+You are a deeply creative, intuitive, and spiritually gifted soul. Your sensitivity and higher awareness are not accidental, they are the tools through which you are meant to fulfill your purpose.
+
+Your ancestors have passed down their strengths to you for a reason.
+
+They want you to embrace your spiritual path and begin helping others.
+
+When you step into that role as a guide, healer, or light for others, you not only unlock your own potential but also honor and fulfill the legacy of your lineage 💫`,
+  10:`1 ✰ October: One of your soul's most important lessons in this lifetime is learning to share and give freely 💖 In a past life, you may have held on tightly to resources, energy, or emotions.
+
+I know you might be thinking, "That does not sound like me." But here is the thing, many of our childhood experiences are designed to challenge those very patterns and help us grow in the opposite direction 🙌🏻
+
+In this life, your mission is to learn to give, especially to your siblings 👩‍❤️‍👨
+
+Whether they are biological or step siblings, your role is to support them, help them rise, offer guidance, and inspire their growth.
+
+You are being asked to take responsibility for their well being, to be a source of strength and direction. Without this inner alignment, making a true quantum leap forward in life can feel harder.
+
+But don't worry — I'm here to guide you through it 💕`,
+  11:`2 ✰ November: You have a deep energetic bond with the women in your family line — your mother, grandmother, and great-grandmother.
+
+Because of this strong connection, one of your soul's key lessons is to support their well-being, to bring them joy, care for their health, and spread kindness through your actions 🙌🏻
+
+If your grandmothers are no longer with you, you can still honor this energy by helping elders in your community, volunteering in nursing homes, or simply offering compassion to those in need.
+
+This is part of your sacred path, and every act of kindness you give will return to you many times over 💫`,
+  12:`3 ✰ December: Your ancestral program is all about gently separating yourself, on an energetic level, from your mother — learning not to repeat her patterns and not to let her opinions shape your life.
+
+Whether you realize it or not, her influence may still have a strong hold over your decisions. It can quietly steer you in directions that don't truly align with who you are, sometimes holding you back from your full potential.
+
+Of course, it's beautiful and important to love her and bring her joy, but that doesn't mean you need to live your life according to her expectations.
+
+This is your moment to release that attachment and start making choices from your own soul — not from inherited fears or guilt.
+Let's take this quantum leap together and step fully into your power 🚀`
+};
+
+const monthImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20165830.png?alt=media&token=ce702d89-fe78-4d42-a52c-80250e395a3a",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20165836.png?alt=media&token=00a31339-2b57-474e-be04-32fb5e682c07",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20165842.png?alt=media&token=1be2785a-97ad-4e3c-9da9-b25612123386",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20165849.png?alt=media&token=0e53d845-fc76-4e8e-88b8-b0434a3da991",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164903.png?alt=media&token=09507e39-4059-4123-8258-ac5f8e860fe8",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164910.png?alt=media&token=e7c9d066-e9cc-4cfe-aba6-dfd2885c2175",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164920.png?alt=media&token=30e1a635-c20b-4ba3-902d-70c574715e1a",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164928.png?alt=media&token=15c7eeae-40d7-4c33-978c-b4764c8853ef",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164937.png?alt=media&token=a0e7b5b4-3b45-44b7-92e5-dd428029468a",
+  10:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164943.png?alt=media&token=945d87f7-363b-45e2-a4d9-33dffe97e481",
+  11:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20164950.png?alt=media&token=cba974d0-6662-4c91-9764-750fa8d5d7e0",
+  12:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20165001.png?alt=media&token=a3e64a62-e06b-4a45-9ed7-0955d0057b57"
+};
+
+const yearDescriptions = {
+  1:`This means you carry the powerful energy of luck and resilience. No matter how many times life knocks you down, you always rise stronger. You are never truly lost — you are built to lead, to rise, and to succeed.
+
+You have incredible potential to grow financially and expand your influence, but there is one condition. You need to learn to let go of control and start trusting — yourself, others, and the Universe.
+
+❌ Your biggest block is the inner controller.
+
+You tend to struggle with delegation, constantly question what others say, and second-guess yourself. That cautious energy can make life feel heavy, like you are always rebuilding from scratch.
+
+But here is the truth. 1 is a deeply material number, yet your true breakthrough comes when you embrace spirituality. That is your secret key. The moment you allow something greater than logic into your life — trust, faith, flow — you will begin to grow not just steadily, but exponentially 🌟`,
+  2:`This means you are a natural spiritual guide, someone with deep intuitive insight and the ability to sense the world on a profound level 🔥
+
+You are especially attuned to the emotions and energies around you, and your path is closely connected to working with women, guiding, supporting, and uplifting them on their journeys.
+
+❌ On the flip side, self doubt can sometimes hold you back. Impostor syndrome may creep in, making you second guess yourself at every step. You might feel like everything has to be perfect or that you are not quite ready yet, and that cautiousness keeps you from stepping fully into your power.
+
+But this hesitation only delays your purpose and stands in the way of the abundance you are meant to receive 💸`,
+  3:`Your true purpose is being on the stage. You are meant to be seen, heard, and celebrated. Whether it is public speaking, performing, or building a presence on social media, your path is all about self-expression and inspiring others through your energy.
+
+When you are aligned and in your power, people are naturally drawn to you. They want to be around you, learn from you, and follow your lead.
+
+❌ But when you are out of alignment, you may put off your dreams, telling yourself, "I'll do it tomorrow." You prioritize your relationships, children, and family above all else, and often hold back out of fear — fear of failure, judgment, or stepping out of your comfort zone.
+
+That fear is what blocks you from showing the world who you truly are. But remember this, you were born to lead, to shine, and to stand where others can see and be inspired by you.
+
+And the best part? You are not alone. I am here to guide you, and together we will take that quantum leap forward 🌟`,
+  4:`Congratulations, this is one of the most financially powerful numbers. With your strong work ethic and dedication, you are fully capable of building lasting success and attracting real wealth 💸
+
+❌ But here is the challenge. You may often find yourself overworking and becoming too focused on the material world. You might even shut out the spiritual side of life, the very energy that could help guide and support you. When that happens, you can start to feel stuck or off track, despite all your efforts, and the results you want just do not show up.
+
+The truth is, hard, repetitive work alone will not lead to the abundance you seek. To truly thrive, you need a new kind of strategy, one that brings your structure together with purpose, flow, and aligned energy.
+
+And I am here to help you build that path ✨`,
+  5:`This is the number of spiritual guides and teachers. You are meant to become a mentor, someone who shares wisdom through your own unique path and experience.
+
+❌ But when this energy is unbalanced, you may find yourself scattered, constantly jumping from one idea or project to the next without bringing it all together.
+
+Here is the truth. Everything you have experienced so far is meant to become part of your teaching. Your journey is your message.
+
+The key to unlocking true abundance lies in mentorship and education, guiding others, sharing your knowledge, and building something of your own.
+
+The more you invest in your personal growth, the more your income and impact will grow 💫`,
+  6:`This is the number of beauty, love, relationships, psychology, and the arts. You are here to bring more harmony, depth, and meaning into the world.
+
+Here's the secret to your financial abundance. You will thrive the most when you are doing something you truly love, something that makes your heart sing so much that you would do it even without being paid.
+
+That is the beautiful paradox of your path. For you, success is not about chasing money, it is about following what lights you up from the inside.
+
+The work that will bring you the greatest rewards is the work that makes the world more beautiful, conscious, loving, and spiritually awake. When you align with this, everything starts flowing naturally ✨`,
+  7:`This is the number of the world's most driven and focused individuals. When you set your mind on something, you make it happen.
+
+Big success and big money? Absolutely within your reach 💸
+
+Here is the key. For a 7, strategy is everything. Without a clear plan, things can stall, growth slows, and abundance stays just out of reach ☝🏻
+
+The 7 holds profound spiritual depth. You experience the world in a way most people do not. That unique perception is your gift and your shortcut to a quantum leap forward.
+
+And the best part? We're going to take that leap together ✨`,
+  8:`Congratulations, this is the most financially powerful number in numerology! 💸
+
+Your key to big success and wealth comes down to one word: scale.
+
+To truly thrive, you need to think bigger. Go beyond your usual limits and take actions that feel bold, new, and maybe even a little uncomfortable.
+
+Let go of obsessing over every material detail. Instead, focus on vision, leadership, and high-impact projects.
+
+When you shift your mindset from small steps to big-picture thinking, your path to abundance opens up naturally and with ease.`,
+  9:`People with this number carry a powerful blend of spiritual intelligence, empathy, and emotional depth. You are often a natural-born spiritual guide and mentor, and your true purpose lies in that realm.
+
+Your key to abundance is self-discovery. The more you dive into your inner world and surround yourself with spiritually aligned people, the closer you will get to true prosperity 💸
+
+Here is something important to remember. This path is not about chasing material wealth — that is not your energy. For you, real abundance comes through spiritual growth and living with purpose. That is where you will find your fulfillment and flow.`
+};
+
+const yearImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172303.png?alt=media&token=d0ce1a50-895d-4580-ae27-0d937f0d2b87",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172309.png?alt=media&token=ab329bd0-dbe2-4eb0-869b-1c13a9f1ff05",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172317.png?alt=media&token=78f2b418-eeea-458f-8993-2e68a45b19fb",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172323.png?alt=media&token=72bd85ab-1dad-4135-9661-4b6751b78667",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172329.png?alt=media&token=1b0375f5-85c6-4352-9a9a-8c623f39d455",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172334.png?alt=media&token=0cc6e945-04d7-4e5f-a9a3-817376d63b29",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172341.png?alt=media&token=abd7eb3a-725c-4d97-9af8-fa3c588990ce",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172346.png?alt=media&token=fe37e88a-aefb-4292-9245-86268fbbd657",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20172351.png?alt=media&token=20bdcade-2a0f-4e3f-9dec-d51473133350"
+};
+
+const destinyDescriptions = {
+  1:`Your Destiny Number is 1 🕊
+
+This number carries a strong, masculine energy. It gives you boldness, independence, and a natural drive to lead. Without even realizing it, you may find yourself competing with the opposite sex, always trying to prove something.
+
+As a result, you might attract partners who are insecure or avoid responsibility, or you may end up with someone who mirrors your intensity, leading to constant power struggles and emotional conflict.
+
+The key to balance is reconnecting with your natural feminine energy — the part of you that is intuitive, open, and radiant — and gently stepping away from the role of the warrior 🙌🏻
+
+That shift will transform your relationships and bring more peace and harmony into your life.`,
+  2:`Your Destiny Number is 2 🕊
+
+You are naturally compassionate, heartfelt, and emotionally tuned in, but when these qualities become unbalanced, they can create challenges in your relationships 😔
+
+You may struggle to set healthy personal boundaries. Sometimes it feels easier to say what others want to hear rather than speak your truth and risk upsetting someone.
+
+You may also find it difficult to express your true needs and desires, keeping everything inside while quietly thinking, "I'm not loved… I don't deserve love… Maybe I'm meant to be alone."
+
+But that is not your truth. It is your soul calling out for healing. Your task in this life is to start speaking up.
+
+To give voice to the emotions and needs you have been holding inside. To learn how to love yourself, stop judging yourself, and finally realize that the most important person in your life is YOU — not your partner.
+
+When you begin to live from this truth, you will attract people who love you honestly, deeply, and without conditions 🙌🏻`,
+  3:`Your Destiny Number is 3 🕊
+
+If you are a woman, you may find yourself deeply focused on family, love, and children, sometimes to the point where you forget about your own growth and purpose 🙌🏻
+
+Here is the truth about the energy of the 3. Your key to truly happy relationships is to keep learning, creating, and expressing yourself. If you ignore this part of yourself, over time you may begin to feel resentful, unfulfilled, and disconnected from your joy 😔
+
+For men with this number, the challenge is different. In a low state, 3 energy can show up as passivity or emotional softness. If that inner strength is not awakened, they often attract dominant, controlling partners, women who end up treating them more like a child than a man.
+
+That is why it is so important to embrace this life lesson and rise into your true power, whether that means stepping into your voice, claiming your growth, or finding balance in love.`,
+  4:`Your Destiny Number is 4 🕊
+
+This number carries strong masculine energy, a force of structure, discipline, and leadership. A 4 often thinks, "I've got this. I'll handle it all myself. I don't need anyone." Sound familiar? 🤔
+
+While this energy can be powerful and impressive, it can also create imbalance, especially for women. A woman with strong 4 energy might consistently attract partners who are passive, noncommittal, or unable to take responsibility.
+
+Why does this happen? Energy always seeks balance. Two strong, dominant forces can repel each other, just as two passive ones may never move forward.
+
+The deeper secret is learning to find harmony between strength and receptivity. That balance is the key to healthy relationships and personal fulfillment.`,
+  5:`Your Destiny Number is 5 🕊
+
+In relationships, your biggest challenge often comes from emotional guardedness, a sense of disconnection from your sensuality, and difficulty expressing your true desires, especially when it means stepping outside the traditional roles or expectations you grew up with 🙌🏻
+
+The energy of the 5 is all about freedom, expansion, and exploration. But when it is unbalanced, it can make you hold back, shrink your expression, and avoid vulnerability.
+
+Another pattern for 5s in relationships is attracting partners who act like "teachers" — men who constantly correct, advise, or try to guide you. And let's be honest, that dynamic can feel more frustrating than supportive.
+
+Here is the shift. When you step into your own truth, embrace your freedom to feel, express, and choose, you stop needing those external lessons, because you become your own teacher and guide.
+
+That is when everything starts to change 💫`,
+  6:`Your Destiny Number is 6 🕊
+
+This number speaks of deep emotional connection, but it can also bring a tendency toward codependency in relationships. You may find yourself giving so much to your partner that you begin to sacrifice your own needs, dreams, and identity.
+
+Over time, this imbalance can lead to disappointment, emotional exhaustion, and even the breakdown of the relationship 😔
+
+Your greatest lesson is to learn how to love yourself first. When you value and care for yourself, it becomes easier for others to love you in a balanced, healthy way.`,
+  7:`Your Destiny Number is 7 🕊
+
+More than anything, you crave clarity, stability, and truth. Uncertainty is hard for you, and you have a natural sensitivity to dishonesty — you feel it instantly, even when no one says a word 🙌🏻
+
+But if you haven't yet fully learned your soul's lesson, your relationships may reflect that, filled with secrecy, mistrust, instability, and emotional distance. This can leave you feeling closed off, guarded, and unable to relax into connection.
+
+When that happens, your feminine energy can become blocked, you may lose your sense of ease, and life can start to feel heavy, with little room for joy or pleasure.
+
+The good news is, this can change. Awareness is the first step. From here, you can heal, soften, and reconnect with your natural radiance ✨`,
+  8:`Your Destiny Number is 8 🕊
+
+Your greatest fear is often betrayal by someone close — a partner, a loved one, someone you trusted deeply.
+
+It's no surprise that this pattern can repeat in your life. There is often an imbalance of energy — either people take too much from you, or they give too much. It is rarely equal.
+
+In relationships, you may find yourself deeply focused on success, achievement, and financial goals, so much so that there is little time or space left for your partner 😔
+
+As a result, you can lose yourself emotionally in your relationships. You may seem distant or closed off, and the people around you — especially those who matter most — may not feel your love.
+
+You might even unintentionally push away the very partner you truly need. That is why you often attract partners who are weak, passive, or irresponsible, not because that is what you want, but because your own walls keep the right ones out ❌
+
+Here is the truth. I understand this deeply. I am also an 8. I have experienced betrayal, chased achievement, and attracted cold relationships, because I was showing up that way too.
+
+And I can help you break this cycle. You do not have to stay in that pattern. There is a way to have both success and love without sacrificing one for the other. Let's unlock that together 💫`,
+  9:`Your Destiny Number is 9 🕊
+
+In a past life, you may have been emotionally distant and guarded, someone who kept their heart closed to most people, letting only a select few in. For those who did enter, the emotional journey was intense, even painful.
+
+When you were betrayed, you would shut down completely and retreat inward, leaving yourself isolated and alone.
+
+In this life, the energy of the 9 can create challenges in your relationships. You may find it difficult to express your true desires, often prioritizing your partner's needs over your own.
+
+You give so much of yourself to others, but in doing so, you may forget your own needs, joy, and emotional fulfillment. When you abandon your own desires, it can lead others to do the same — ignoring your needs, withholding affection, or forgetting to give back in meaningful ways.
+
+But remember, you deserve love, care, and pleasure just as much as anyone else.
+
+It is time to reclaim your heart and honor your own needs. That is the path to healing and true connection 💖`
+};
+
+const destinyImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/big_2ee07acf92932cddf7847d4729aae663.png?alt=media&token=f50ebda2-7b36-419d-bcd3-5d5cb742b13b"
+};
+
+const healthDescriptions = {
+  1:`Your sensitive areas are your respiratory system and nervous system. It's essential for you to take care of your mental clarity and emotional balance because overworking and chronic stress can quickly take a toll.
+
+For you, rest isn't optional — it's vital.
+
+Make space in your life for relaxation, calm, and self-care: think spa days, massages, quiet moments, and soothing routines.
+
+Your energy is powerful, but it needs balance.
+
+When you give yourself time to recharge, you unlock your true strength and creativity 🙌🏻`,
+  2:`Your sensitive area when it comes to health is the urinary system : including your kidneys, adrenal glands, and bladder. All paired organs in your body may be more vulnerable if you haven't yet fully integrated the soul lessons of the 2nd energy. 💊
+
+At the heart of this number is the need for emotional balance and healing. It's essential to release old resentments, practice self-love, and treat yourself with deep care and kindness.
+
+Just as important is reconciling with your parents, especially on an emotional and energetic level.
+
+When peace is made within your family relationships, your energy realigns and your well-being begins to restore itself 🙌🏻`,
+  3:`This number carries vibrant creative and emotional energy, but when blocked or unfulfilled, it can manifest physically, often affecting the reproductive system, and in some cases, creating challenges around fertility or pregnancy.
+
+To maintain your health and inner balance, it's essential to live your truth and follow your soul's purpose.
+
+The key is not just to chase achievements or constantly "do more," but to become a fulfilled and radiant woman: one who expresses herself, shines in her own way, and nurtures both her joy and her voice.
+
+When you allow yourself to grow, express, and truly be seen, your body aligns with that energy and your health begins to flourish 🙌🏻`,
+  4:`Your natural drive and dedication make you incredibly hardworking, but if you continue to push yourself without rest, you risk burning out completely 😔
+
+When the energy of the 4 is unbalanced, it often shows up in the spine, bones, teeth, and can even lead to hernias. These physical symptoms are your body's way of saying: "Slow down."
+
+If you're already noticing signs like this in your body, it's a clear message that something needs to change 💊
+
+You must begin to prioritize rest, self-care, and balance. Your strength is powerful but even strong foundations need time to recover and rebuild.
+
+Less hustle, more healing — that's your new path forward 🙌🏻`,
+  5:`Your sensitive areas are the liver and nervous system. Symptoms like insomnia, anxiety, or panic attacks are clear signs that you may be running on empty: emotionally and energetically 🙇‍♂️
+
+This happens when you're not aligned with your true path, constantly pushing yourself without giving your body and spirit time to recharge.
+
+To restore balance, it's essential to slow down, rest, and reconnect with your feminine energy, especially your sensuality and creative flow, which may currently feel blocked or dormant.
+
+When you begin to honour your rhythm, nourish your nervous system, and allow yourself moments of joy and softness, your vitality will return and your energy will flow freely again 🙌🏻`,
+  6:`Everything related to the skin and body is closely connected to the energy of the 6.
+
+Issues like breakouts, rashes, or even chronic conditions like psoriasis often reflect inner emotional blocks tied to self-image and self-worth.
+
+For the 6th energy, one of the most important lessons is to truly love your body as it is.
+
+When you stop criticizing yourself: whether it's for extra weight, thinness, or appearance, your body responds with balance, clarity, and healing.
+
+✨ Self-love is your medicine.
+And when you embrace your body with compassion, everything begins to transform 🙌🏻`,
+  7:`This number often carries a deep spiritual and mental intensity, but when it's unbalanced, it can lead to a careless approach to physical health: things like addictions, smoking, alcohol, neglecting exercise, or poor nutrition.
+
+These habits don't just affect your energy, they begin to wear down your body, especially your bones, joints, and knees.
+
+This is a serious warning sign from your system: your body needs more care, presence, and balance.
+
+If you're already noticing physical changes or discomfort, it's time to take action now: shift your lifestyle, rebuild healthy habits, and realign your body with the strength of your spirit 🙌🏻
+
+You have powerful potential — but to unlock it fully, your body needs to be on your side.`,
+  8:`This number is often linked to gut health issues and immune-related conditions. In a past life, your energy may have been heavily focused on the negative, always scanning for what's wrong, struggling to feel joy, and diving headfirst into work at the expense of everything else 🗂
+
+If you carry those same habits into this life — constantly overworking, stressing, or ignoring the good around you — those old patterns and imbalances could resurface again.
+
+But here's the good news: these challenges are just soul lessons waiting to be transformed.
+
+By choosing to grow, shift your mindset, and open your heart, you can rewrite your story and reclaim your vitality 🙌🏻`,
+  9:`In a past life, you were emotionally closed off, and in this life, those deeply held fears can manifest through physical health issues.
+
+You may be more prone to things like early aging, immune system imbalances, or even growths and chronic conditions — not because you're weak, but because your energy tends to get stuck when you're living in fear or isolation.
+
+To stay healthy and radiant, it's essential to work with your mindset: to shift toward positive thinking and actively train your mind to expect the best outcomes ✨
+
+The real magic happens when you step out of your comfort zone and allow yourself to be seen, to connect, to create.
+
+Once you begin to show up fully, life begins to flow beautifully 🙌🏻`
+};
+
+const healthImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h1.png?alt=media&token=5a52af2a-9462-47bc-8580-e62862785a9d",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h2.png?alt=media&token=80e15c0f-1ec9-44f0-ae36-d75fa3be6027",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h3.png?alt=media&token=29ff337c-62af-4f73-bf32-4bbc3e828714",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h4.png?alt=media&token=f663449c-219a-409c-90f3-edce73101b47",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h5.png?alt=media&token=bf3f63d2-0b87-4dd8-a46d-6482e1d25fb0",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h6.png?alt=media&token=24a7c2c2-241d-46e6-9553-c9698df1b5d1",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h7.png?alt=media&token=9eb20435-f61e-4679-a58d-909bfc915db1",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h8.png?alt=media&token=bf057988-7bbf-427a-8c55-b783931fdeca",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/h9.png?alt=media&token=7d1e12a9-0403-49ff-a3bc-7e2d44a919d7"
+};
+
+const activationDescriptions = {
+  1:`💫 Strengths: Creativity, natural leadership, deep empathy, and resilience.
+💫 Inner Power: Boundless life energy and emotional depth.
+💫 Soul Mission: To inspire others, create what's never been done, and uplift those around you.
+
+All of these gifts were within you from the moment you were born — Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮️️`,
+  2:`💫 Strengths: Reliability, practicality, patience, and a nurturing nature.
+💫 Inner Resource: Steadiness, resilience, and the ability to maintain inner and outer balance.
+💫 Life Mission: To build strong foundations, create harmony, and offer others a sense of safety and stability.
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along✮️️`,
+  3:`💫 Strengths: Deep intuition, emotional sensitivity, inner wisdom, and compassion.
+💫 Inner Resource: Profound emotional depth and the ability to see the truth beneath the surface
+💫 Life Mission: To guide and uplift others through understanding, empathy, and the light of knowledge.
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮️️`,
+  4:`💫 Strengths: Responsibility, discipline, strategic thinking, perseverance
+💫 Inner Resource: Inner strength and the ability to see things through
+💫 Main Mission: To create stable, long-term projects and help others achieve their goals
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮`,
+  5:`💫 Strengths: Flexible thinking, strong communication skills, creativity, and a curious mind.
+💫 Inner Resource: A constant flow of ideas and the ability to adapt quickly.
+💫 Life Mission: To explore new horizons, share knowledge, and inspire change wherever you go.
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮`,
+  6:`💫 Strengths: Optimism, charisma, authenticity and the power to uplift others.
+💫 Inner Resource: A bright, magnetic energy that naturally draws people in.
+💫 Life Mission: To spread light and joy, and to inspire those around you to grow and evolve.
+
+It's time to activate your SUCCESS CODE and let your true light shine ✮️`,
+  7:`💫 Strengths: Analytical mind, keen observation, thirst for knowledge, and quiet patience.
+💫 Inner Resource: Deep insight and the ability to uncover hidden patterns.
+💫 Life Mission: To reveal mysteries, share your discoveries, and guide others into the unknown.
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along️ ✮`,
+  8:`💫 Strengths: Imagination, independence, inspiration, and out-of-the-box thinking.
+💫 Inner Power: The strength of your dreams and your belief in the impossible.
+💫 Life Mission: To create new worlds, spark transformation, and walk your own unique path.
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮`,
+  9:`💫 Strengths: Kindness, deep listening, healing energy, and gentle understanding.
+💫 Inner Resource: The power of love and a natural ability to restore balance.
+💫 Life Mission: To help others heal — emotionally, spiritually, and energetically — and to create a space of peace, safety, and support wherever you go 🌟
+
+Now you have all the knowledge about your true purpose — the deeper reasons behind your talents, values, and destiny. This is your personal roadmap to a life filled with meaning, joy, and fulfillment. Trust what you've discovered here, because it's been within you all along ✮`
+};
+
+const activationImages = {
+  1:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180709.png?alt=media&token=509a5e0f-8d77-4411-92a0-59e385f8deeb",
+  2:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180723.png?alt=media&token=1cf1f706-1bfa-4f3d-9d40-ee86ec03ecf6",
+  3:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180729.png?alt=media&token=3108764c-d9d9-4974-a1bd-9da8e9275849",
+  4:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180752.png?alt=media&token=ecc92632-5b13-4a9e-bf5c-852b4a56cba9",
+  5:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180759.png?alt=media&token=0f415769-ed10-44a4-a66c-d42f643d2005",
+  6:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180746.png?alt=media&token=ac437833-45ab-48e1-8eff-60333e7fe170",
+  7:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180806.png?alt=media&token=965a7ac3-1fac-4e8b-9da9-811f0058644b",
+  8:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180811.png?alt=media&token=0892154b-cf31-4827-a575-7df63e65f9ab",
+  9:"https://firebasestorage.googleapis.com/v0/b/soul-code-app.firebasestorage.app/o/Screenshot%202025-09-26%20180737.png?alt=media&token=b5d7b058-7018-4e68-9d19-089ad7252db0"
+};
+
+// ── HELPERS ───────────────────────────────────────────────────
+function reduce(n){ while(n>9) n=String(n).split('').reduce((s,d)=>s+parseInt(d),0); return n; }
+
+function show(id){
+  const el=document.getElementById(id);
+  el.style.display='block';
+  requestAnimationFrame(()=>{ el.style.opacity='1'; });
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+function tracker(id, unlocked){
+  const el=document.getElementById(id);
+  el.innerHTML='';
+  for(let i=0;i<5;i++){
+    const c=document.createElement('div');
+    if(i<unlocked.length){
+      c.className='tc on'; c.textContent=unlocked[i];
+    } else {
+      c.className='tc off';
+    }
+    el.appendChild(c);
+    if(i<4){ const s=document.createElement('div'); s.className='tsep'; s.textContent='—'; el.appendChild(s); }
+  }
+}
+
+// ── DROPDOWNS ─────────────────────────────────────────────────
+(function(){
+  const d=document.getElementById('inp-day'), y=document.getElementById('inp-year');
+  for(let i=1;i<=31;i++){ const o=document.createElement('option'); o.value=i; o.textContent=i<10?'0'+i:i; d.appendChild(o); }
+  for(let i=new Date().getFullYear()-10;i>=1940;i--){ const o=document.createElement('option'); o.value=i; o.textContent=i; y.appendChild(o); }
+})();
+
+// ── STATE ─────────────────────────────────────────────────────
+let N={};
+
+// ── STEP 0: Calculate + show intro ───────────────────────────
+function startReading(){
+  const day=parseInt(document.getElementById('inp-day').value);
+  const month=parseInt(document.getElementById('inp-month').value);
+  const year=parseInt(document.getElementById('inp-year').value);
+  const e=document.getElementById('date-err');
+  if(!day||!month||!year){e.style.display='block';return;} e.style.display='none';
+
+  const pNum=reduce(day);
+  const mNum=reduce(month);
+  const yNum=reduce(year);
+  const dNum=reduce(pNum+mNum+yNum);
+  const hNum=reduce(pNum+mNum+yNum+dNum);
+  N={day,month,year,pNum,mNum,yNum,dNum,hNum};
+
+  const card=document.getElementById('calc-card');
+  card.style.opacity='.4'; card.style.pointerEvents='none';
+  document.getElementById('loader').style.display='block';
+
+  setTimeout(()=>{
+    document.getElementById('loader').style.display='none';
+    document.getElementById('intro-body').textContent=
+`Within you lies a unique code made up of 5 keys. To unlock it and discover your path to success, you must gather all the keys.
+
+At the heart of this code is your true purpose — the essence that makes you special and helps you unleash your full potential.
+
+Do you want to know:
+ 👤 Who you truly are? What your talents and strengths are?
+💼 Which field of activity will allow you to realize your abilities while also bringing you abundant income?`;
+    show('b-intro');
+  },1800);
+}
+
+// ── KEY 1: Personality (day) ──────────────────────────────────
+function showKey1(){
+  
+  document.getElementById('k1-img').src=personalityImages[N.pNum];
+  document.getElementById('k1-txt').textContent=personalityDescriptions[N.pNum];
+  show('b-k1');
+  tracker('tr1',[N.pNum]);
+}
+
+// ── KEY 2: Ancestral (month) ──────────────────────────────────
+function showKey2(){
+  
+  document.getElementById('k2-img').src=monthImages[N.month];
+  document.getElementById('k2-txt').textContent=monthWisdom[N.month];
+  show('b-k2');
+  tracker('tr2',[N.pNum,N.mNum]);
+}
+
+// ── EMAIL GATE ────────────────────────────────────────────────
+function showGate(){ show('b-gate'); }
+
+function submitEmail(){
+  const name=document.getElementById('g-name').value.trim();
+  const email=document.getElementById('g-email').value.trim();
+  const e=document.getElementById('email-err');
+  if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){e.style.display='block';return;} e.style.display='none';
+  try{
+    firebase.firestore().collection('email').add({
+      name,email,day:N.day,month:N.month,year:N.year,
+      dateOfBirth: N.day + '/' + N.month + '/' + N.year,
+      personalityNumber:N.pNum,ancestryNumber:N.mNum,
+      moneyNumber:N.yNum,destinyNumber:N.dNum,healthNumber:N.hNum,
+      timestamp:new Date().toISOString()
+    }).catch(e=>console.log('Firebase:',e));
+  }catch(e){console.log('Firebase not available');}
+  document.getElementById('b-gate').style.display='none';
+  showKey3();
+}
+
+// ── KEY 3: Career/Money (year) ────────────────────────────────
+function showKey3(){
+  
+  document.getElementById('k3-img').src=yearImages[N.yNum];
+  document.getElementById('k3-txt').textContent=yearDescriptions[N.yNum];
+  show('b-k3');
+  tracker('tr3',[N.pNum,N.mNum,N.yNum]);
+}
+
+// ── KEY 4: Relationships (destiny) ───────────────────────────
+function showKey4(){
+  
+  document.getElementById('k4-img').src=destinyImages[N.dNum];
+  document.getElementById('k4-txt').textContent=destinyDescriptions[N.dNum];
+  show('b-k4');
+  tracker('tr4',[N.pNum,N.mNum,N.yNum,N.dNum]);
+}
+
+// ── KEY 5: Health ─────────────────────────────────────────────
+function showKey5(){
+ 
+  document.getElementById('k5-img').src=healthImages[N.hNum];
+  document.getElementById('k5-txt').textContent=healthDescriptions[N.hNum];
+  show('b-k5');
+  tracker('tr5',[N.pNum,N.mNum,N.yNum,N.dNum,N.hNum]);
+}
+
+// ── CODE REVEAL + ACTIVATION ──────────────────────────────────
+function showCode(){
+  const c=document.getElementById('code-nums'); c.innerHTML='';
+  [N.pNum,N.mNum,N.yNum,N.dNum,N.hNum].forEach(n=>{
+    const el=document.createElement('div'); el.className='cn'; el.textContent=n; c.appendChild(el);
+  });
+  document.getElementById('act-img').src=activationImages[N.hNum];
+  document.getElementById('act-txt').textContent=activationDescriptions[N.hNum];
+  show('b-code');
+}
+</script>
+</body>
+</html>
